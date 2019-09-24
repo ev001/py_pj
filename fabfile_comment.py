@@ -15,20 +15,14 @@ import json
 #print( os.path.dirname( os.path.abspath(__file__) ) )
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 print(PROJECT_DIR)
-# c:\Users\bBONO\Desktop\py_projects\first
+# c:\Users\...\Desktop\py_projects\first
 
 # 2. 환경변수 로드
 # json.load() = json 파일을 읽어서 그 구조를 유지하여 리턴
 envs = json.load(open( os.path.join(PROJECT_DIR,'deploy.json') ) )
 print( envs )
 
-'''
-    "REPO_URL" : "https://github.com/ev001/first",
-    "PROJECT_NAME":"first",
-    "REMOTE_HOST":"ec2-13-125-237-50.ap-northeast-2.compute.amazonaws.com",
-    "REMOTE_HOST_SSH":"13.125.237.50",
-    "REMOTE_USER":"ubuntu"
-'''
+
 # 3. 로드한 환경변수를 상수(변하지 않는)의미로 설정
 REPO_URL        = envs['REPO_URL']
 PROJECT_NAME    = envs['PROJECT_NAME']
